@@ -1,0 +1,36 @@
+
+Ejemplo de formulario de contacto con PHPMailer
+-----------------------------------------------
+
+- El ejemplo contiene:
+    - contacto.php: página con formulario de contacto, seteo de datos del formulario y seteo de envío de email
+    - contacto-enviado.php: página de aviso de mensaje enviado
+    - app/modelos/contacto-class.php: clase para setear y validar los datos del formulario en el servidor
+    - app/librerias/phpmailer/: clases para enviar emails
+    - js/contacto.js: funciones para validar los datos del formulario en el cliente
+    - css/estilo.css: estilos de las páginas
+
+- contacto-class.php:
+    - Esta clase se puede adaptar modificando los datos, las validaciones y la seguridad
+    - Si hay errores en el formulario son capturados por: catch (Exception $e) {...
+
+- contacto.js:
+    - Estas funciones se pueden adaptar modificando los datos, las validaciones y la seguridad
+
+- phpmailer: 
+    - Se descarga de Internet (https://github.com/PHPMailer/PHPMailer), 
+    - Se agrega a una carpeta del proyecto (app/librerias/...),
+    - Se incluye en un script php (requiere_once...), 
+    - Se genera una instancia de la clase ($mail = new ...), 
+    - Se setean los datos de envío ($mail->...)
+    - Se realiza el envío ($mail->send)
+    - Hay que agregar una cuenta gmail para el envío (usuario y password). Además, se debe indicar una cuenta de recepción (usuario).
+    - Si hay errores en el envío son capturados por: catch (phpmailerException $e) {...
+    - Para el envío de emails debe estar habilitado extension=php_openssl.dll en xampp\php\php.ini (por SMTP Error)
+      (para habilitar quitar el punto y coma (;extension=php_openssl.dll) guardar y reiniciar apache)
+    - Si no es necesario enviar el email, el seteo de la cuenta de envío, la cuenta de recepción y la función send pueden estar deshabilitadas
+       //$mail->Username = '...@gmail.com';  
+       //$mail->Password = '...';       
+       //$mail->AddAddress('...@...', '...'); 
+       //$mail->Send();
+ 

@@ -1,0 +1,41 @@
+
+body {
+    font-family: Arial, Tahoma, Sans-serif;
+    font-size: 1em;
+}
+ 
+.contacto {
+   border: 1px solid  #ddd;
+   background-color: #fafafa;
+   width: 400px;
+} 
+.contacto p {
+    margin: 20px 12px;
+}
+.contacto div {
+    margin: 12px;
+}
+.contacto label {
+    display: block;
+}
+.contacto input[type="text"], input[type="email"] {
+    padding: 10px;
+    width: 320px;
+}
+.contacto input[type="submit"] {
+    color: #fff;
+    background-color: #4788ee;
+    font-weight: bold;
+    padding: 10px 10px;
+}
+.contacto input[type="submit"]:hover {
+    background-color: #3677dd;
+}
+.contacto-enviado {
+    color: #46aa10;
+    font-weight: bold;
+}
+
+#mensaje {
+    border: 1px solid #aaa;
+}
